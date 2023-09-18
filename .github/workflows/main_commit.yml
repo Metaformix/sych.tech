@@ -1,0 +1,64 @@
+name: Upload to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ vars.S3_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.S3_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ vars.S3_AWS_DEFAULT_REGION }}
+
+      - name: Install modules
+        run: npm install
+
+      - name: Compile CSS
+        run: NODE_ENV=production npm run build:css
+
+      - name: Compile JS
+        run: NODE_ENV=production npm run build:js
+
+      - name: Cleanup files
+        run: |
+          rm -rf ./.github
+          rm -rf ./.git
+          rm -rf ./*.sh
+          rm -rf ./*.json
+          rm -rf ./*.config*
+          rm -rf ./.gitignore
+          rm -rf ./.dockerignore
+          rm -rf ./styles.css
+          rm -rf ./js/*
+          rm -rf ./node_modules/
+
+      - name: Copy files to S3
+        run: |
+          aws s3 sync ./ s3://${{ vars.S3_BUCKET_NAME }}/
+
+      - name: Invalidate CloudFront cache, distribution ID ${{ vars.CF_DISTRIBUTION_ID }}
+        run: |
+          sleep 5
+          invalidation_id=$(aws cloudfront create-invalidation --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --paths "/*" --query Invalidation.Id)
+          length=${#invalidation_id}
+
+          # Wait for invalidation to finish
+          aws cloudfront wait invalidation-completed --distribution-id ${{ vars.CF_DISTRIBUTION_ID }} --id ${invalidation_id:1:$length-2}
+
+
+      - name: Restore cache
+        run: |
+          wget ${{ vars.WEBSITE_URL }}
+          wget ${{ vars.WEBSITE_URL }}lib/d3.v3.min.js
+          wget ${{ vars.WEBSITE_URL }}lib/d3.layout.cloud.js
+

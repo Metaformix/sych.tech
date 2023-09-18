@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaform</title>
+
+    <meta property="og:title" content="IT Consultant | Metaform">
+    <meta property="og:site_name" content="Metaform">
+    <meta property="og:url" content="https://sych.tech/">
+    <meta property="og:description"
+          content="A seasoned IT consultant with over 20 years of experience in transforming businesses through technology solutions. From DevOps to cloud architecture, my expertise drives efficiency, sustainability, and resilience. Partner with me and elevate your business processes to new heights.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/metaform_logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.min.css">
+    <meta name="theme-color" content="#000">
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() {
+            dataLayer.push(arguments);
+        }
+        if(window.location.hostname.indexOf("sych.tech")>=0) {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TQP2BLG1K6';
+            script.async = true;
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', 'G-TQP2BLG1K6');
+        }
+    </script>
+
+    <script>
+        const skillMap = [
+            {
+                category: "Consult",
+                words: [
+                    {text: "Consult & Strategy", setSize: 60},
+                    {text: "Cloud", setSize: 40},
+                    {text: "Infrastructure", setSize: 40},
+                    {text: "Architecture", setSize: 40},
+                    {text: "Integration", setSize: 30},
+                    {text: "Costs", setSize: 30},
+                    {text: "Website performance", setSize: 30},
+                    {text: "SEO", setSize: 30},
+                    /* {text: "Manpower eval", setSize: 30}, */
+                    {text: "Workflows", setSize: 30},
+                ],
+            },
+            {
+                category: "Planning",
+                words: [
+                    {text: "Analysis & Planning", setSize: 60},
+                    {text: "Research", setSize: 40},
+                    {text: "Estimates", setSize: 35},
+                    {text: "Workflows", setSize: 35},
+                    {text: "QA automation", setSize: 35},
+                    {text: "Core Web Vitals", setSize: 35},
+                    {text: "Tech specs", setSize: 35},
+                    {text: "Insights", setSize: 35},
+                    {text: "KPI", setSize: 35},
+                ],
+            },
+            {
+                category: "Drive",
+                words: [
+                    {text: "Growth & Marketing", setSize: 60},
+                    {text: "Scalability", setSize: 40},
+                    {text: "Tracking", setSize: 40},
+                    {text: "ROI analysis", setSize: 40},
+                    {text: "Leads", setSize: 40},
+                    {text: "Conversions", setSize: 40},
+                    {text: "SEO", setSize: 40},
+                    {text: "Campaigns", setSize: 30},
+                    {text: "CTR", setSize: 30},
+                    {text: "CPC", setSize: 30},
+                    {text: "CPA", setSize: 30},
+                ],
+            },
+            {
+                category: "Cloud",
+                words: [
+                    {text: "Cloud", setSize: 60},
+                    {text: "AWS", setSize: 50},
+                    {text: "Costs", setSize: 50},
+                    {text: "Security", setSize: 50},
+                    {text: "Containers", setSize: 40},
+                    {text: "High-load", setSize: 40},
+                    {text: "IaaS", setSize: 40},
+                    {text: "CDN", setSize: 40},
+                    {text: "Spot", setSize: 40},
+                    {text: "DNS", setSize: 35},
+                    {text: "RDS", setSize: 35},
+                    {text: "S3", setSize: 35},
+                    {text: "SNS", setSize: 25},
+                    {text: "SQS", setSize: 25},
+                    {text: "SES", setSize: 25},
+                    {text: "IAM", setSize: 25},
+                    {text: "WAF", setSize: 25},
+                    {text: "ECR", setSize: 25},
+                    {text: "ECS", setSize: 25},
+                ],
+            },
+            {
+                category: "DevOps",
+                words: [
+                    {text: "DevOps", setSize: 60},
+                    {text: "Orchestration", setSize: 40},
+                    {text: "Automation", setSize: 40},
+                    {text: "Environments", setSize: 40},
+                    {text: "CI/CD", setSize: 35},
+                    {text: "Docker", setSize: 35},
+                    {text: "GitHub Actions", setSize: 30},
+                    {text: "GitLab", setSize: 30},
+                    {text: "Shell scripting", setSize: 30},
+                ],
+            },
+            {
+                category: "Dev",
+                words: [
+                    {text: "Hands-on", setSize: 60},
+                    {text: "API", setSize: 40},
+                    {text: "Integrations", setSize: 40},
+                    {text: "Microservices", setSize: 40},
+                    {text: "Node.js", setSize: 40},
+                    {text: "MongoDB", setSize: 40},
+                    {text: "PHP", setSize: 38},
+                    {text: "MySQL", setSize: 38},
+                    {text: "Redis", setSize: 35},
+                    {text: "Nginx", setSize: 35},
+                    {text: "JavaScript", setSize: 35},
+                    {text: "CSS", setSize: 35},
+                ],
+            },
+            {
+                category: "Big Data",
+                words: [
+                    {text: "Big Data", setSize: 60},
+                    {text: "Distributed", setSize: 35},
+                    {text: "Real-time", setSize: 35},
+                    {text: "Performance", setSize: 35},
+                    {text: "Visualization", setSize: 20},
+                    {text: "ClickHouse", setSize: 20}
+                ],
+            },
+        ];
+    </script>
+
+</head>
+<body class="w-full content">
+
+<div id="hero">
+    <div id="smtpe" class="noexpand-height flex h-[100vh] transition-all duration-2000 ease-in-out w-full">
+        <div class="line bg-black"></div>
+        <div class="line bg-gray-700"></div>
+        <div class="line bg-gray-600"></div>
+        <div class="line bg-gray-500"></div>
+        <div class="line bg-gray-400"></div>
+        <div class="line bg-gray-300"></div>
+        <div class="line bg-gray-200"></div>
+        <div class="line bg-gray-100"></div>
+    </div>
+    <!--
+    <div id="canvasContainer" class="w-full">
+    </div>
+    -->
+</div>
+
+<div class="heading1">
+    <div class="format">
+        <h2 data-reference="name">&nbsp;</h2>
+    </div>
+</div>
+<div class="mx-auto">
+    <div class="format">
+        <div class="section">
+
+            <p>
+                As a seasoned IT Consultant, I bring my multifaceted expertise, innovative spirit, and customer-centric
+                approach to every client. A deep understanding of both technology and business makes me not just a
+                consultant, but a reliable partner.
+            </p>
+            <p>
+                Regardless of the challenge at hand or the size of the task - with over 20 years in the
+                field, I’ve seen it all and solved it all.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="heading">
+    <div class="format">
+        <h2>Approach&nbsp<span></span></h2>
+    </div>
+</div>
+
+<div class="section approach">
+    <div class="approachWrapper">
+        <div class="approachCube ">
+            <div class="cube select-none" id="cube">
+                <div class="face front">
+                    <div class="px-5">
+                        <b>Proactive</b>
+                        <p>
+                            I anticipate potential challenges and address them head-on before they become problems
+                        </p>
+                    </div>
+                </div>
+                <div class="face back">
+                    <div class="px-5">
+                        <b>Transparent</b>
+                        <p>
+                            I believe in open communication and keeping clients informed at every stage of the
+                            process.
+                        </p>
+                    </div>
+                </div>
+                <div class="face right">
+                    <div class="px-5">
+                        <b>Collaborative</b>
+                        <p>
+                            I work closely with my clients, fostering a collaborative relationship that
+                            ensures business goals are met.
+                        </p>
+                    </div>
+                </div>
+                <div class="face left">
+                    <div class="px-5">
+                        <b>Detail-oriented</b>
+                        <p>
+                            I pay close attention to every detail, from planning to execution - ensuring nothing
+                            is overlooked.
+                        </p>
+                    </div>
+                </div>
+                <div class="face top">
+                    <div class="px-5">
+                        <b>Experienced</b>
+                        <p>
+                            With over two decades in the field, I bring a wealth of knowledge and a proven track record
+                        </p>
+                    </div>
+                </div>
+                <div class="face bottom">
+                    <div class="px-5">
+                        <b>Business-savvy</b>
+                        <p>
+                            I don’t just apply tech solutions – I consider business implications every step of
+                            the way
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rotateIndication" style="">
+        <span class="text-smaller">
+            <img class="inline" src="images/icon_rotate.svg" alt="rotate me"><br>
+                rotate me
+        </span>
+    </div>
+</div>
+
+<div class="heading">
+    <div class="format">
+        <h2>Skill set&nbsp;<span></span></h2>
+    </div>
+</div>
+
+<div class="section skillmap">
+    <div class="format pb-8">
+        <p>
+            This map covers the landscape of my expertise. This might look overwhelming
+            - much like today’s tech. However, I can bring clarity amid perceived chaos:
+        </p>
+
+        <!-- <button class='button' onclick="SwitchToRowLayout();void(0);">Organize skill map</button> -->
+
+        <!-- <button class='button' onclick="javascript:SwitchToCloudLayout();void(0);">Cloud view</button>
+
+        <button class='button' onclick="javascript:SwitchToRandomScatter();void(0);">Unstructured form</button>
+        -->
+    </div>
+
+    <div class="switch">
+        <div class="w-[25%] label">
+            <a href="#chaos" id="chaos">chaos</a>
+        </div>
+        <div class="w-[50%]">
+            <div class="switch-container">
+                <div class="switch-track"></div>
+                <div class="switch-circle"></div>
+            </div>
+        </div>
+        <div class="w-[25%] label">
+            <a href="#organized" id="organized">order</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="word-cloud-container animate-floating-4 px-5 py-7">
+    <div class="word-cloud " id=word-cloud-wrap-0
+         data-number="0">
+        <svg id="word-cloud-0" overflow="visible"></svg>
+    </div>
+    <div class="word-cloud " id=word-cloud-wrap-1
+         data-number="1">
+        <svg id="word-cloud-1" overflow="visible"></svg>
+    </div>
+    <div class="word-cloud " id=word-cloud-wrap-2
+         data-number="2">
+        <svg id="word-cloud-2" overflow="visible"></svg>
+    </div>
+    <div class="word-cloud " id=word-cloud-wrap-3
+         data-number="3">
+        <svg id="word-cloud-3" overflow="visible"></svg>
+    </div>
+    <div class="word-cloud" id=word-cloud-wrap-4
+         data-number="4">
+        <svg id="word-cloud-4" overflow="visible"></svg>
+    </div>
+    <div class="word-cloud " id=word-cloud-wrap-5
+         data-number="5">
+        <svg id="word-cloud-5" overflow="visible"></svg>
+    </div>
+</div>
+
+<!--
+<div class="text-center text-smaller pt-2">
+    <a class=" underline-dotted" href="javascript:void(0);" onclick="SwitchToRowLayout();void(0);">organized</a>
+    &nbsp;&nbsp;&nbsp;
+    <a class=" underline-dotted" href="javascript:void(0);" onclick="SwitchToRandomScatter();void(0);">chaos</a>
+
+    &nbsp;&nbsp;&nbsp;
+    <a class=" underline-dotted" href="javascript:void(0);" onclick="SwitchToCloudLayout();void(0);">back to chaos</a>
+</div>
+-->
+
+
+<div class="heading">
+    <div class="format">
+        <h2>Projects&nbsp;<span></span></h2>
+    </div>
+</div>
+
+<div class="section">
+    <div class="format ">
+        <p>
+            Explore some notable projects I've been involved in, spanning various industries and technologies, each with its unique story, but all are great success.
+        </p>
+    </div>
+</div>
+
+
+<div class="portfolio">
+    <div class="project" id="project_fi">
+        <div class="bg">
+            <div class="grad">
+                <h3>FirstImpression.io</h3>
+                <h4>Architecture<br>for industry<br>game-changer</h4>
+                <div class="descr">
+                    <p>
+                        I developed core technologies of
+                        FirstImpression.io in its early days. It included numerous integrations with tens of
+                        technological
+                        partners and open source projects, multiple cloud platforms. Today the platform serves hundreds
+                        of websites as the company's clients. I have implemented truly unique technology that
+                        FirstImpression.io
+                        patented in the US.
+                    </p>
+                    <p>
+                        <a href="https://firstimpression.io/" target="_blank">https://firstimpression.io/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project" id="project_fashionbank">
+        <div class="bg">
+            <div class="grad">
+                <h3>FashionBANK</h3>
+                <h4>Tech-driven<br>collaboration hub</h4>
+                <div class="descr">
+                    <p>FashionBANK was a social network that connected professionals in the fashion industry.
+                        I was responsible for all aspects of the tech side, including architecture,
+                        UI, coding, and infrastructure.
+                    </p>
+                    <p>The project is available as a digital snapshot at the following address:</p>
+                    <p>
+                        <a href="http://fbank.co.il/" target="_blank">http://fbank.co.il/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project" id="project_academica">
+        <div class="bg">
+            <div class="grad">
+                <h3>Academica</h3>
+                <h4>Investor-ready<br>now</h4>
+                <div class="descr">
+                    <p>
+                        Academica is a pre-school educational program designed for interactive, enjoyable learning. I
+                        led
+                        Investor Readiness,
+                        and am also responsible for the platform's infrastructure and scalability.
+                    </p>
+                    <p>
+                        <a href="https://academica.org.il/" target="_blank">https://academica.org.il/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project" id="project_expo">
+        <div class="bg">
+            <div class="grad">
+                <h3>Expo</h3>
+                <h4>Navigation made<br>simple</h4>
+                <div class="descr">
+                    <p>
+                        As a product manager I curated development of a mobile application and platform for the Tel Aviv
+                        convention center, the venue that also hosted Eurovision in 2019.<br>
+                        The app features a proprietary in-door navigation solution based on a mesh of
+                        Bluetooth beacons, 3D map of the compound, integration with CRM and outdoor navigation screens.
+                    </p>
+                    <p>
+                        <a href="https://play.google.com/store/apps/details?id=com.taexpo" target="_blank">Expo app on
+                            Google Play</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project" id="project_balda">
+        <div class="bg">
+            <div class="grad">
+                <h3>Balda</h3>
+                <h4>Lockdown fun</h4>
+                <div class="descr">
+                    <p>
+                        Balda is a classic word game. During the COVID-19 pandemic lockdown, my wife and I created this
+                        online
+                        version of Balda to play remotely with our friends.
+                        The game uses web sockets, Node.js backend, integration with Wikitionary, and many other neat
+                        tricks.
+                        Fully responsive design with great illustrations. I highly recommend, it is so addicting during
+                        long stays at home.
+                    </p>
+                    <p>
+                        <a href="https://balda-game.online/" target="_blank">https://balda-game.online/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project" id="project_pashut">
+        <div class="bg">
+            <div class="grad">
+                <h3>Pashut Laledet</h3>
+                <h4>Adversity turned<br>into a triumph</h4>
+                <div class="descr">
+                    <p>
+                        Pashut Laledet is a project where, as an IT consultant, I helped the business to regain its
+                        positions in
+                        Google Search and revive their stream of leads, integrate payment system and streamline online
+                        sales workflow.
+                    </p>
+                    <p>
+                        After a dramatic drop in rankings due to the launch of a new website, I worked to turn the
+                        situation
+                        around.
+                    </p>
+                    <p>
+                        <a href="https://www.hypnobirthing.co.il/" target="_blank">
+                            https://www.hypnobirthing.co.il/
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="heading">
+    <div class="format">
+        <h2>Your business&nbsp;<span></span></h2>
+    </div>
+</div>
+
+<div class="section">
+    <div class="format">
+        <p>
+            Your business may be tech-oriented or operate in an industry where technology plays a crucial role.
+            You understand that the efficiencies driven by effective use of technology don't just occur, but require
+            thoughtful direction to drive growth.
+        </p>
+        <p>
+            My goal is to form strategic alliances with businesses like yours. As your trusted IT partner, I strive to
+            make everything I involve myself in beneficial for both immediate needs and long-term success and
+            sustainability.
+        </p>
+    </div>
+</div>
+
+<div class="heading">
+    <div class="format">
+        <h2>Interested?&nbsp;<span></span></h2>
+    </div>
+</div>
+<div class="section">
+    <div class="format pt-4">
+
+        <p>Let's talk!<br>
+            Special offer: preliminary video call and first few email consultations are free of charge. Just send me
+            your NDA and let’s get started.</p>
+
+        <p class="contact-links mt-8">
+            <span>Contact me:&nbsp;</span>
+            <span id="contactsContainer1">
+                <span>
+                    <img src="images/icon_mail.svg" alt="mail">
+                    <a data-reference=mail href="" target="_blank"></a>
+                </span>
+                <span>
+                    <img src="images/icon_linkedin.svg" alt="linkedin">
+                    <a data-reference=li href="" target="_blank">LinkedIn</a>
+                </span>
+                <span>
+                    <img src="images/icon_github.svg" alt="github">
+                    <a data-reference=gh href="" target="_blank">GitHub</a>
+                </span>
+            </span>
+        </p>
+
+    </div>
+</div>
+<footer class="flex flex-col justify-between h-[20vh]">
+    <div>
+        <!-- Content that takes up space in the container -->
+    </div>
+    <div class="mt-auto w-full h-[10vh] text-center">
+
+    </div>
+    <div class="w-full text-white pb-5 ">
+        <div class="flex">
+            <div class="w-1/4  pl-5 md:pl-10"> <!-- 25% wide -->
+                &copy; <span data-reference="year"></span> &nbsp;
+            </div>
+            <div class="w-1/2 pl-4 impressum"> <!-- 50% wide -->
+                <span data-reference="name"></span> | <a href="impressum.html">Impressum</a>
+            </div>
+            <div class="w-1/4 pr-5 md:pr-10 text-right small hidden md:block" id="contactsContainer2">
+                <span>
+                    <a data-reference=mail href="" target="_blank"><img src="images/icon_mail.svg" alt="mail"></a>
+                </span>
+                <span>
+                    <a data-reference=li href="" target="_blank"><img src="images/icon_linkedin.svg" alt="linkedin"></a>
+                </span>
+                <span>
+                    <a data-reference=gh href="" target="_blank"><img src="images/icon_github.svg" alt="github"></a>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="relative left-[50%] w-[50%]">
+        </div>
+    </div>
+</footer>
+
+
+<script src="lib/d3.v3.min.js"></script>
+<script src="lib/zepto.min.js"></script>
+<script src="lib/fx.js"></script>
+<script src="lib/fx_methods.js"></script>
+
+<script src="lib/d3.layout.cloud.js"></script>
+
+<script src="main.min.js"></script>
+
+</body>
+</html>

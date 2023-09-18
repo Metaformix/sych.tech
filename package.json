@@ -1,0 +1,39 @@
+{
+  "name": "metaform-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node_modules/.bin/postcss styles.css -o styles.min.css",
+    "build:js": "node_modules/.bin/webpack",
+    "watch:css": "node_modules/.bin/postcss styles.css -o styles.min.css --watch ",
+    "watch:js": "node_modules/.bin/webpack watch ",
+    "serve": "live-server --port=9000 --ignorePattern=styles\\.min\\.css --wait=500",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "concurrently": "^8.2.1",
+    "cssnano": "^6.0.1",
+    "flowbite-typography": "^1.0.3",
+    "live-server": "^1.1.0",
+    "postcss": "^8.4.29",
+    "postcss-cli": "^10.1.0",
+    "postcss-nesting": "^12.0.1",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "overrides": {
+    "chokidar": "3.5.3",
+    "glob-parent": "6.0.2"
+  }
+}
