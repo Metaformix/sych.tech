@@ -578,26 +578,28 @@ canvas {
 
     #project_fi .bg {
         background-image: url('images/firstimpression.jpg');
+        background-position: center;
     }
     #project_fashionbank .bg {
         background-image: url('images/fbank.jpg');
-        background-position: top left;
+        background-position: center;
     }
     #project_academica .bg {
         background-image: url('images/academica.jpg');
+        background-position: center;
     }
     #project_expo .bg {
         background-image: url('images/expo.jpg');
-        background-position: top left;
+        background-position: center;
     }
     #project_balda .bg {
         background-image: url('images/balda.jpg');
-        background-position: bottom left;
+        background-position: center;
     }
 
     #project_pashut .bg {
         background-image: url('images/pashut.jpg');
-        background-position: bottom left;
+        background-position: center;
     }
 
 
@@ -622,8 +624,9 @@ canvas {
         }
         .bg {
             @apply h-full;
+            background-repeat: no-repeat;
             background-size: cover;
-            background-position: bottom left;
+            background-position: center bottom;
         }
 
         h4 {
@@ -634,7 +637,7 @@ canvas {
             color: #fff;
         }
         h3, h4, .descr {
-            @apply md:w-[40vw] min-w-[75vw] md:min-w-[50vw];
+            @apply md:w-[60%] min-w-[75vw] md:min-w-[50vw];
             padding: 10px;
             /* margin-bottom: 2px; */
             /* background-color: #00000080; */
