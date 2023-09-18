@@ -592,12 +592,12 @@ canvas {
     }
     #project_balda .bg {
         background-image: url('images/balda.jpg');
-        background-position: top left;
+        background-position: bottom left;
     }
 
     #project_pashut .bg {
         background-image: url('images/pashut.jpg');
-        background-position: top left;
+        background-position: bottom left;
     }
 
 
