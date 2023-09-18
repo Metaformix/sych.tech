@@ -8,6 +8,7 @@ let svgs = [];
 
 function skillsInit() {
 
+    if(!$(".word-cloud").length) return;
     /*
     $(".word-cloud").on("mouseenter", function() {
         //SwitchToCloudLayout($(this).data("number"))
@@ -28,7 +29,6 @@ function skillsInit() {
     //window.svgHeight = parseInt($(".word-cloud").first().height(), 10);
     const factor = (window.innerWidth<450) ? 140 : 40;
     window.svgHeight = parseInt((window.innerWidth*factor)/window.svgWidth, 10);
-    console.log(window.svgHeight)
 
     skillMap.forEach((category, index) => {
         // Create SVG element once

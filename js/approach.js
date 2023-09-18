@@ -292,10 +292,10 @@ const observerOptions = {
     threshold: 0
 };
 
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-observer.observe($cube[0]);
+if($cube.length) {
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe($cube[0]);
 
-// Got to Cube state
-goCube();
-
-
+    // Got to Cube state
+    goCube();
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaform</title>
+
+    <meta property="og:title" content="IT Consultant | Metaform">
+    <meta property="og:site_name" content="Metaform">
+    <meta property="og:url" content="https://sych.tech/">
+    <meta property="og:description"
+          content="A seasoned IT consultant with over 20 years of experience in transforming businesses through technology solutions. From DevOps to cloud architecture, my expertise drives efficiency, sustainability, and resilience. Partner with me and elevate your business processes to new heights.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/metaform_logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.min.css">
+    <meta name="theme-color" content="#000">
+
+    <!-- Google tag (gtag.js) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() {
+            dataLayer.push(arguments);
+        }
+        if(window.location.hostname.indexOf("sych.tech")>=0) {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-TQP2BLG1K6';
+            script.async = true;
+            document.head.appendChild(script);
+
+            gtag('js', new Date());
+            gtag('config', 'G-TQP2BLG1K6');
+        }
+    </script>
+
+    <script>
+        const skillMap = [
+            {
+                category: "Consult",
+                words: [
+                    {text: "Consult & Strategy", setSize: 60},
+                    {text: "Cloud", setSize: 40},
+                    {text: "Infrastructure", setSize: 40},
+                    {text: "Architecture", setSize: 40},
+                    {text: "Integration", setSize: 30},
+                    {text: "Costs", setSize: 30},
+                    {text: "Website performance", setSize: 30},
+                    {text: "SEO", setSize: 30},
+                    /* {text: "Manpower eval", setSize: 30}, */
+                    {text: "Workflows", setSize: 30},
+                ],
+            },
+            {
+                category: "Planning",
+                words: [
+                    {text: "Analysis & Planning", setSize: 60},
+                    {text: "Research", setSize: 40},
+                    {text: "Estimates", setSize: 35},
+                    {text: "Workflows", setSize: 35},
+                    {text: "QA automation", setSize: 35},
+                    {text: "Core Web Vitals", setSize: 35},
+                    {text: "Tech specs", setSize: 35},
+                    {text: "Insights", setSize: 35},
+                    {text: "KPI", setSize: 35},
+                ],
+            },
+            {
+                category: "Drive",
+                words: [
+                    {text: "Growth & Marketing", setSize: 60},
+                    {text: "Scalability", setSize: 40},
+                    {text: "Tracking", setSize: 40},
+                    {text: "ROI analysis", setSize: 40},
+                    {text: "Leads", setSize: 40},
+                    {text: "Conversions", setSize: 40},
+                    {text: "SEO", setSize: 40},
+                    {text: "Campaigns", setSize: 30},
+                    {text: "CTR", setSize: 30},
+                    {text: "CPC", setSize: 30},
+                    {text: "CPA", setSize: 30},
+                ],
+            },
+            {
+                category: "Cloud",
+                words: [
+                    {text: "Cloud", setSize: 60},
+                    {text: "AWS", setSize: 50},
+                    {text: "Costs", setSize: 50},
+                    {text: "Security", setSize: 50},
+                    {text: "Containers", setSize: 40},
+                    {text: "High-load", setSize: 40},
+                    {text: "IaaS", setSize: 40},
+                    {text: "CDN", setSize: 40},
+                    {text: "Spot", setSize: 40},
+                    {text: "DNS", setSize: 35},
+                    {text: "RDS", setSize: 35},
+                    {text: "S3", setSize: 35},
+                    {text: "SNS", setSize: 25},
+                    {text: "SQS", setSize: 25},
+                    {text: "SES", setSize: 25},
+                    {text: "IAM", setSize: 25},
+                    {text: "WAF", setSize: 25},
+                    {text: "ECR", setSize: 25},
+                    {text: "ECS", setSize: 25},
+                ],
+            },
+            {
+                category: "DevOps",
+                words: [
+                    {text: "DevOps", setSize: 60},
+                    {text: "Orchestration", setSize: 40},
+                    {text: "Automation", setSize: 40},
+                    {text: "Environments", setSize: 40},
+                    {text: "CI/CD", setSize: 35},
+                    {text: "Docker", setSize: 35},
+                    {text: "GitHub Actions", setSize: 30},
+                    {text: "GitLab", setSize: 30},
+                    {text: "Shell scripting", setSize: 30},
+                ],
+            },
+            {
+                category: "Dev",
+                words: [
+                    {text: "Hands-on", setSize: 60},
+                    {text: "API", setSize: 40},
+                    {text: "Integrations", setSize: 40},
+                    {text: "Microservices", setSize: 40},
+                    {text: "Node.js", setSize: 40},
+                    {text: "MongoDB", setSize: 40},
+                    {text: "PHP", setSize: 38},
+                    {text: "MySQL", setSize: 38},
+                    {text: "Redis", setSize: 35},
+                    {text: "Nginx", setSize: 35},
+                    {text: "JavaScript", setSize: 35},
+                    {text: "CSS", setSize: 35},
+                ],
+            },
+            {
+                category: "Big Data",
+                words: [
+                    {text: "Big Data", setSize: 60},
+                    {text: "Distributed", setSize: 35},
+                    {text: "Real-time", setSize: 35},
+                    {text: "Performance", setSize: 35},
+                    {text: "Visualization", setSize: 20},
+                    {text: "ClickHouse", setSize: 20}
+                ],
+            },
+        ];
+    </script>
+
+</head>
+<body class="w-full content">
+
+<div class="heading1">
+    <div class="format">
+        <h2><a data-reference="name" href="/">&nbsp;</a></h2>
+    </div>
+</div>
+<div class="heading">
+    <div class="format">
+        <h2>Impressum&nbsp;<span></span></h2>
+    </div>
+</div>
+<div class="section">
+    <div class="format pt-4" id="impressum">
+
+        <p>
+            <b data-reference="legal_name"></b><br>
+            <span data-reference="legal_address"></span>
+        </p>
+        <p>
+            <b>Ust-IdNr.:</b>&nbsp;<span data-reference="legal_vat"></span><br>
+        </p>
+
+        <p>
+            <span data-reference="email"></span>
+        </p>
+
+        <p>
+            <b>Privacy notice:</b><br>This site does not collect any personal data and does not set cookies.
+            Cookies are set by a third-party service Google Analytics, you can see <a href="https://policies.google.com/technologies/partner-sites" target="_blank"><u>here</u></a> its privacy statement.
+        </p>
+        <p>
+            <b>Copyright notice:</b><br>Contents of this website are copyrighted under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"><u>Apache 2.0 license</u></a>.
+        </p>
+
+        <p>
+            <b>Limitation of Liability:</b><br>The contents of https://sych.tech website are created with great care. However, no
+            liability is assumed for the accuracy, completeness and topicality of the content provided.
+            The use of the contents of the website is at the user's own risk.
+        </p>
+
+
+        <p class="contact-links mt-8">
+            <b>Contact:&nbsp;</b>
+            <span id="contactsContainer1">
+                <span>
+                    <img src="images/icon_mail.svg" alt="mail">
+                    <a data-reference=mail href="" target="_blank"></a>
+                </span>
+                <span>
+                    <img src="images/icon_linkedin.svg" alt="linkedin">
+                    <a data-reference=li href="" target="_blank">LinkedIn</a>
+                </span>
+                <span>
+                    <img src="images/icon_github.svg" alt="github">
+                    <a data-reference=gh href="" target="_blank">GitHub</a>
+                </span>
+            </span>
+        </p>
+
+    </div>
+</div>
+<footer class="flex flex-col justify-between h-[20vh]">
+    <div>
+        <!-- Content that takes up space in the container -->
+    </div>
+    <div class="mt-auto w-full h-[10vh] text-center">
+
+    </div>
+    <div class="w-full text-white pb-5 ">
+        <div class="flex">
+            <div class="w-1/4  pl-5 md:pl-10"> <!-- 25% wide -->
+                &copy; <span data-reference="year"></span> &nbsp;
+            </div>
+            <div class="w-1/2 pl-4 impressum"> <!-- 50% wide -->
+                <span data-reference="name"></span> | <a href="impressum.html">Impressum</a>
+            </div>
+            <div class="w-1/4 pr-5 md:pr-10 text-right small hidden md:block" id="contactsContainer2">
+                <span>
+                    <a data-reference=mail href="" target="_blank"><img src="images/icon_mail.svg" alt="mail"></a>
+                </span>
+                <span>
+                    <a data-reference=li href="" target="_blank"><img src="images/icon_linkedin.svg" alt="linkedin"></a>
+                </span>
+                <span>
+                    <a data-reference=gh href="" target="_blank"><img src="images/icon_github.svg" alt="github"></a>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="relative left-[50%] w-[50%]">
+        </div>
+    </div>
+</footer>
+
+<script src="lib/zepto.min.js"></script>
+
+<script src="main.min.js"></script>
+
+</body>
+</html>
