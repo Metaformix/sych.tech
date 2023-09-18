@@ -79,7 +79,7 @@ canvas {
     font-size: 2.5rem;
 }
 .heading {
-    @apply mt-[10vh];
+    @apply mt-[20vh];
     font-size: 1.5rem;
 }
 
@@ -596,7 +596,7 @@ canvas {
     }
 
     #project_pashut .bg {
-        /* background-image: url('images/balda.jpg'); */
+        background-image: url('images/pashut.jpg');
         background-position: top left;
     }
 
@@ -608,12 +608,17 @@ canvas {
         background: var(--color);
         background-blend-mode: overlay;  /* Blends the gradient color with the image */
         cursor: ew-resize;
-        background: linear-gradient(to right, black, #404040);
 
         .grad {
-            @apply p-4 h-full w-full;
-            background: linear-gradient(to right, #000000EA, #40404088);
+            @apply h-full w-full;
+            background: linear-gradient(to right, #000000EA 25%, #00000088 100%);
             transition: background 1s;
+        }
+
+        .grad1 {
+            @apply p-4 h-full w-full;
+            transition: background 0.5s;
+            /* background: linear-gradient(135deg, #000000EA 26%, #00000088 100%); */
         }
         .bg {
             @apply h-full;
@@ -623,25 +628,27 @@ canvas {
 
         h4 {
             font-size: 1.2vw;
-            line-height: 1.6vw;;
+            line-height: 1.6vw;
         }
         h3, h4 {
             color: #fff;
         }
         h3, h4, .descr {
-            @apply md:w-[40vw] min-w-[75vw];
+            @apply md:w-[40vw] min-w-[75vw] md:min-w-[50vw];
             padding: 10px;
             /* margin-bottom: 2px; */
             /* background-color: #00000080; */
         }
         h3 {
+            font-size: 0.7rem;
             margin-top: 13vh;
             font-weight: bold;
+            text-transform: uppercase;
         }
         .descr {
             filter: blur(2px);
             overflow: hidden;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
 
             p {
                 @apply mb-4 !important;
@@ -658,11 +665,18 @@ canvas {
             float: right;
             color: white;
             position: relative;
-            top: -5vh;
+            top: -8vh;
             left: -2vh;
             transition: opacity 0.3s;
+            font-size: 1.6rem;
         }
 
+    }
+
+    .project:hover {
+         .grad1 {
+            /* background: none; */
+        }
     }
 
     /* Regular hover styles for non-touch devices */
@@ -688,7 +702,7 @@ canvas {
                 filter: blur(0);
             }
             .grad {
-                background: linear-gradient(to right, black, #40404000);
+                background: linear-gradient(to right, #000000EA 15%, #00000044 100%);
             }
         }
     }
