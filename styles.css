@@ -663,15 +663,17 @@ canvas {
             }
         }
 
-        .bg:after {
-            content: '→';
-            float: right;
-            color: white;
-            position: relative;
-            top: -8vh;
-            left: -2vh;
-            transition: opacity 0.3s;
-            font-size: 1.6rem;
+        @media (min-width: 960px) {
+            .bg:after {
+                content: '→';
+                float: right;
+                color: white;
+                position: relative;
+                top: -8vh;
+                left: -2vh;
+                transition: opacity 0.3s;
+                font-size: 1.6rem;
+            }
         }
 
     }
