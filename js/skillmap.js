@@ -329,14 +329,26 @@ $(document).ready(function () {
     let $labels = $(".skillmap .switch .label");
     $labels.first().click(()=>{
         switchTo('chaos');
+        window.gtag('event', 'interact_skillmap', {
+            'event_category': 'Skill map interaction',
+            'event_label': 'User interacted with skill map',
+        });
         return false;
     })
     $labels.last().click(()=>{
         switchTo('organized');
+        window.gtag('event', 'interact_skillmap', {
+            'event_category': 'Skill map interaction',
+            'event_label': 'User interacted with skill map',
+        });
         return false;
     })
 
     function switchTo(state) {
+
+        // User discovered the feature
+        $(window).off("scroll",  forciblyOrganize);
+
         if(state === 'organized') {
             $switchContainer.addClass('active');
             SwitchToRowLayout();
@@ -344,11 +356,17 @@ $(document).ready(function () {
             $switchContainer.removeClass('active');
             SwitchToRandomScatter()
         }
-        window.gtag('event', 'interact_skillmap', {
-            'event_category': 'Skill map interaction',
-            'event_label': 'User interacted with skill map',
-        });
     }
 
+    function forciblyOrganize() {
+        if(window.currentState !== 'organized') {
+            if($(".switch").offset().top - $(".switch .label").height()*4 - window.scrollY < $("h2.attachedHeading").reduce((accumulator, currentValue) => accumulator +  $(currentValue).height(), 0)) {
+                $(window).off("scroll",  forciblyOrganize);
+                switchTo("organized")
+            }
+        }
+
+    }
+    $(window).on("scroll",  forciblyOrganize);
 
 })
