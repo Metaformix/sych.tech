@@ -287,9 +287,25 @@ function fontSize(d, i, currentState) {
 
 let $switchContainer
 let $trackContainer
+
+let prevWindowSize = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+};
 $(document).ready(function () {
     skillsInit();
     $(window).resize(function () {
+
+        const currentWindowSize = {
+            width: window.innerWidth,
+            height: window.innerHeight,
+        };
+        const widthDifference = currentWindowSize.width - prevWindowSize.width;
+        const heightDifference = currentWindowSize.height - prevWindowSize.height;
+
+        if(Math.abs(widthDifference)<150 && Math.abs(heightDifference) < 150 ) return;
+
+
         let $wc = $(".word-cloud").first();
         window.svgWidth = parseInt($wc.width(), 10);
         window.svgHeight = parseInt($wc.height(), 10);
