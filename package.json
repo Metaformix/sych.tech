@@ -10,7 +10,7 @@
     "watch:css": "node_modules/.bin/postcss styles.css -o styles.min.css --watch ",
     "watch:js": "node_modules/.bin/webpack watch ",
     "serve": "live-server --port=9000 --ignorePattern=styles\\.min\\.css --wait=500",
-    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\""
+    "dev": "NODE_ENV=development concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
