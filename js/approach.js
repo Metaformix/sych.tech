@@ -106,15 +106,19 @@ function onMouseMove(e) {
         deltaX = e.clientX - startX;
         deltaY = e.clientY - startY;
 
+        let yDirection =  (130 < (mouseRotationX%360) && (mouseRotationX%360) < 230 ? -1 : 1);
+
         mouseRotationX -= deltaY * 0.5;
-        mouseRotationY += deltaX * 0.5;
+        mouseRotationY += deltaX * 0.5 * yDirection;
 
     } else if (e.type === "touchmove") {
         deltaX = e.touches[0].clientX - startX;
         deltaY = e.touches[0].clientY - startY;
 
+        let yDirection =  (130 < (mouseRotationX%360) && (mouseRotationX%360) < 230 ? -1 : 1);
+
         mouseRotationX -= deltaY * 0.75;
-        mouseRotationY += deltaX * 0.75;
+        mouseRotationY += deltaX * 0.75 * yDirection;
 
     }
 
